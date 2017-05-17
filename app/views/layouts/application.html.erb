@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Facebook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+      <span class="sr-only">メニュー</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "Facebook", root_path, class: "nabvar-brand" %>
+  </div>
+
+  <div id="gnavi" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "ユーザー一覧", root_path %></li>
+      <li><%= link_to "投稿", topics_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+   <%= value %>
+  </div>
+<% end %>
+<%= yield %>
+
+  <footer>
+   <span>Facebook © 2017</span>
+  </footer>
+</body>
+</html>
