@@ -46,4 +46,8 @@ end
 # Design bootstrap
 gem 'twitter-bootstrap-rails'
 
+# for jquery
 gem 'jquery-turbolinks'
+
+# error check on heroku
+gem 'rails_12factor', group: :production
