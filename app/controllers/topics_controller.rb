@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :topic_find_id, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @topics = Topic.all
@@ -11,6 +12,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topics_params)
+    @topic.user_id = current_user.id
     if @topic.save
       redirect_to topics_path
       flash[:success] = '投稿されました'

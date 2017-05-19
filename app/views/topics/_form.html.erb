@@ -4,7 +4,7 @@
       <%= form_for(@topic) do |f| %>
         <% if @topic.errors.any? %>
           <div id="error_explanation">
-          <h2><%= @topic.errors.count %>errors you have.</h2>
+          <h2><%= @topic.errors.count %>件のエラーが発生しました。</h2>
           <ul>
             <% @topic.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>

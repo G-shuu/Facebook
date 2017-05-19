@@ -51,3 +51,9 @@ gem 'jquery-turbolinks'
 
 # error check on heroku
 gem 'rails_12factor', group: :production
+
+# login gem
+gem 'devise'
+
+# making seed data
+gem 'faker'

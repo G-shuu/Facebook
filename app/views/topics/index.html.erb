@@ -7,6 +7,7 @@
         <ul class="topic-ul">
           <li>タイトル:<%= topic.title %></li>
           <li>内容:<%= topic.content %></li>
+          <li>id:<%= topic.user_id %></li>
         </ul>
         <%= link_to 'detail', topic_path(topic.id), class: 'btn btn-info' %>
         <%= link_to 'Edit', edit_topic_path(topic.id), class: 'btn btn-success' %>
