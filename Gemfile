@@ -45,6 +45,9 @@ group :development, :test do
   # mail confirmation on development
   gem 'letter_opener_web'
 
+  # debug gem
+  gem 'pry-rails'
+  gem 'better_errors'
 end
 
 # Design bootstrap
@@ -61,3 +64,7 @@ gem 'devise'
 
 # making seed data
 gem 'faker'
+
+# admin page gem
+gem 'rails_admin'
+gem 'cancan'
