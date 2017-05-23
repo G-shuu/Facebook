@@ -48,6 +48,9 @@ group :development, :test do
   # debug gem
   gem 'pry-rails'
   gem 'better_errors'
+
+  # for env file
+  gem 'dotenv-rails'
 end
 
 # Design bootstrap
@@ -68,3 +71,12 @@ gem 'faker'
 # admin page gem
 gem 'rails_admin'
 gem 'cancan'
+
+# SNS API login gem
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+#image uploader
+gem 'carrierwave'
+gem 'rmagick'
