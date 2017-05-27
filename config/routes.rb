@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :topics, only: [:index, :new, :create, :show, :update, :edit, :destroy]
+  resources :topics do
+    resources :comments
+  end
 
   root 'top#index'
 

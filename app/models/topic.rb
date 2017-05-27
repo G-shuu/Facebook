@@ -1,4 +1,9 @@
 class Topic < ActiveRecord::Base
-  validates :title, :content, presence: true
+  mount_uploader :avatar, AvatarUploader
+
+  validates :content, presence: true
+
   belongs_to :user
+
+  has_many :comments, dependent: :destroy
 end

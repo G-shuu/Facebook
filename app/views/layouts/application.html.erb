@@ -17,7 +17,11 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "Facebook", root_path, class: "nabvar-brand" %>
+    <% if user_signed_in? %>
+      <%= link_to "Facebook", topics_path, class: "nabvar-brand" %>
+    <% else %>
+      <%= link_to "Facebook", root_path, class: "nabvar-brand" %>
+    <% end %>
   </div>
 
   <div id="gnavi" class="collapse navbar-collapse">

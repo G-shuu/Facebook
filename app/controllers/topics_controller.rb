@@ -40,7 +40,7 @@ class TopicsController < ApplicationController
 
   private
     def topics_params
-      params.require(:topic).permit(:title, :content)
+      params.require(:topic).permit(:content, :avatar)
     end
 
     def topic_find_id
