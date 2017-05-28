@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to topic_path(@topic) }
         format.js { render :index }
-        flash[:notice] = 'コメントしました。'
       else
         format.html { render :new }
       end
@@ -28,7 +27,6 @@ class CommentsController < ApplicationController
      if @comment.update(comment_params)
       format.html { redirect_to topic_path(@topic) }
       format.js { render :index }
-      flash[:notice] = 'コメントを更新しました。'
      else
       format.html {render :new }
      end
@@ -40,7 +38,6 @@ class CommentsController < ApplicationController
       if @comment.destroy
         format.html { redirect_to topic_path(@topic) }
         format.js { render :index }
-        flash[:notice] = 'コメントを削除しました。'
       else
         format.html { render :new }
       end
