@@ -1,9 +1,15 @@
+.pull-right {
+  display: inline-block;
+  vertical-align: 10px;
+}
+
 ul {
   list-style: none;
 }
 
-li {
-  display: inline !important;
+.list-inline li {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 hr {
@@ -11,4 +17,23 @@ hr {
   border:0;
   box-shadow:0 30px 30px -30px #ccc inset;
   width: 450px;
+}
+
+.follow {
+  text-align: center;
+}
+
+.follower li,
+.followed li {
+  text-align: left;
+  margin: 0 auto;
+}
+
+.followed {
+  padding-top: 25px;
+}
+
+.user-button {
+  text-align: center;
+  padding-top: 25px;
 }

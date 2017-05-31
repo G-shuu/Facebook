@@ -1,0 +1,20 @@
+<div class="follow">
+  <div class="follower"><%= user.name %>のフォロワー</div>
+  <% @user.followers.each do |user| %>
+  <ul>
+    <li><%= profile_img(user) %></li>
+    <li><%= user.name %></li>
+  </ul>
+  <% end %>
+</br>
+  <div class="followed"><%= user.name %>のフォローしている人</div>
+  <% @user.followed_users.each do |user| %>
+  <ul>
+    <li><%= profile_img(user) %></li>
+    <li><%= user.name %></li>
+  </ul>
+  <% end %>
+</div>
+<div class="user-button">
+  <%= link_to "一覧へ戻る", users_path %>
+</div>

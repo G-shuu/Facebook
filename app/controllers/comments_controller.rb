@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  include CommentsHelper
 
   before_action :get_comment_id, only: [:show, :edit, :update, :destroy]
 
@@ -6,11 +7,18 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @topic = Topic.find(params[:topic_id])
     @comment.topic_id = @topic.id
+    @notification = @comment.notifications.build(user_id: @topic.user.id)
 
     respond_to do |format|
       if @comment.save
         format.html { redirect_to topic_path(@topic) }
         format.js { render :index }
+
+        unless  @comment.topic.user_id == current_user.id
+          comment_pusher
+        end
+          comment_notification
+
       else
         format.html { render :new }
       end
@@ -18,7 +26,6 @@ class CommentsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update

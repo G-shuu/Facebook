@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: {
@@ -11,9 +13,13 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   resources :relationships, only: [:create, :destroy]
+
+  resources :conversations do
+    resources :messages
+  end
 
   root 'top#index'
 
