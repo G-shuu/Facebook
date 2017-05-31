@@ -49,8 +49,12 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
 
-  # for env file
-  gem 'dotenv-rails'
+  # capistrano
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 # Design bootstrap
@@ -86,3 +90,10 @@ gem 'pusher'
 
 # image upload for aws
 gem 'fog'
+
+# for env file and aws
+gem 'dotenv-rails'
+gem 'unicorn'
+
+# for capistrano
+gem 'therubyracer', platforms: :ruby
