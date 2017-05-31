@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Sendgrid Settings
-  config.action_mailer.default_url_options = { host: 'https://mighty-depths-79293.herokuapp.com/'}
+  config.action_mailer.default_url_options = { host: 'http://52.198.93.249'}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
