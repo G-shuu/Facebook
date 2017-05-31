@@ -83,3 +83,6 @@ gem 'rmagick'
 
 # notification
 gem 'pusher'
+
+# image upload for aws
+gem 'fog'
