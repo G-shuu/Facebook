@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @topics = Topic.all
+    @topics = Topic.page(params[:page]).order(created_at: :desc)
   end
 
   def new

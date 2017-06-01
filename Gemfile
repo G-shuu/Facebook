@@ -97,3 +97,6 @@ gem 'unicorn'
 
 # for capistrano
 gem 'therubyracer', platforms: :ruby
+
+# paginate
+gem 'kaminari'

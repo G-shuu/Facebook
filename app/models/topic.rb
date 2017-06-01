@@ -6,4 +6,6 @@ class Topic < ActiveRecord::Base
   belongs_to :user
 
   has_many :comments, dependent: :destroy
+
+  paginates_per 5
 end
