@@ -19,7 +19,6 @@
 #n = 1
 #while n <= 100
 #  Topic.create(
-#    title: "aaa",
 #    content: "bbb",
 #    user_id: n
 #  )
