@@ -11,9 +11,9 @@
         </div>
 
         <div class="content-function">
-          <%= link_to 'detail', topic_path(topic.id) %>
-          <%= link_to 'Edit', edit_topic_path(topic.id) %>
-          <%= link_to 'delete', topic_path(topic.id), method: :delete, data: { confirm: 'Are you Sure?' } %>
+          <%= link_to '詳細へ', topic_path(topic.id) %>
+          <%= link_to '編集する', edit_topic_path(topic.id) %>
+          <%= link_to '削除する', topic_path(topic.id), method: :delete, data: { confirm: 'Are you Sure?' } %>
         </div>
       <hr />
 

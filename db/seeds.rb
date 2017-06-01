@@ -7,20 +7,24 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-#100.times do |n|
-#  email = Faker::Internet.email
-#  password = "password"
-#  User.create!(email: email,
-#               password: password,
-#               password_confirmation: password,
-#               )
-#end
+10.times do |n|
+  email = Faker::Internet.email
+  name = Faker::Cat.name
+  password = "password"
+  uid = SecureRandom.uuid
+  User.create!(email: email,
+               name: name,
+               password: password,
+               password_confirmation: password,
+               uid: uid
+               )
+end
 
-#n = 1
-#while n <= 100
-#  Topic.create(
-#    content: "bbb",
-#    user_id: n
-#  )
-#  n = n + 1
-#end
+n = 1
+while n <= 10
+  Topic.create(
+    content: "bbb",
+    user_id: n,
+  )
+  n = n + 1
+end
