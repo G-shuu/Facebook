@@ -48,6 +48,10 @@
       <% end %>
       <br>
 
+      <div class="followship">
+        <%= render partial: '/users/follow_connection', locals: { user: @user } %>
+      </div>
+
       <h3>アカウント削除</h3>
         <p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当にいいですか?" }, method: :delete %></p>
       <%= link_to "戻る", :back %>

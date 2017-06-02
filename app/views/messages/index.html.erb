@@ -14,7 +14,7 @@
         <div class="item-right">
           <div class="content">
             <div class="header"><%= message.message_time %></div>
-              <%= profile_img(user) %>
+              <%= profile_img(user) %><%= user.name %>
               <div class="list">
                 <div class="item">
                   <%= message.body %>
@@ -27,6 +27,7 @@
           <div class="item-left">
             <div class="content">
               <div class="header"><%= message.message_time %></div>
+               <%= user.try(:name) %>
                 <div class="list">
                   <div class="item">
                       <%= message.body %>
