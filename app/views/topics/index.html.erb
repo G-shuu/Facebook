@@ -17,7 +17,7 @@
         </div>
       <hr />
 
-      <div id="comments_area">
+      <div id="comments_area_<%= topic.id %>">
         <%= render partial: 'comments/index', locals: { comments: topic.comments, topic: topic} %>
       </div>
         <%= render partial: 'comments/form', locals: { comment: @comment = topic.comments.build , topic: topic} %>
