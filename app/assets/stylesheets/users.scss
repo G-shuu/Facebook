@@ -5,7 +5,11 @@
 
 ul {
   list-style: none;
+  display: block;
+  vertical-align: middle;
+  text-align: center;
 }
+
 
 .list-inline li {
   display: inline-block;

@@ -23,7 +23,7 @@
         <%= render partial: 'comments/form', locals: { comment: @comment = topic.comments.build , topic: topic} %>
 
       <% end %>
-    <%= paginate @topics, outer_window: 4 %>
+    <%= paginate @topics, outer_window: 8 %>
     </div>
   </div>
 </div>
