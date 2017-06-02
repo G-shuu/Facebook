@@ -8,7 +8,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
-  process resize_to_limit: [120, 100]
+  process resize_to_fit: [120, 100]
 
   # サムネイル画像
   version :thumb do
