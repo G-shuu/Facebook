@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+
   before_action :topic_find_id, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 

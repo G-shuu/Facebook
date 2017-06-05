@@ -2,11 +2,10 @@ class CommentsController < ApplicationController
   include CommentsHelper
 
   before_action :get_comment_id, only: [:show, :edit, :update, :destroy]
+  before_action :get_topic_id, only: [:create, :edit, :update, :destroy]
 
   def create
     @comment = current_user.comments.build(comment_params)
-    @topic = Topic.find(params[:topic_id])
-    @comment.topic_id = @topic.id
     @notification = @comment.notifications.build(user_id: @topic.user.id)
 
     respond_to do |format|
@@ -29,7 +28,6 @@ class CommentsController < ApplicationController
   end
 
   def update
-
     respond_to do |format|
      if @comment.update(comment_params)
       format.html { redirect_to topic_path(@topic) }
@@ -58,5 +56,9 @@ class CommentsController < ApplicationController
 
     def get_comment_id
       @comment = Comment.find(params[:id])
+    end
+
+    def get_topic_id
+      @topic = Topic.find(params[:topic_id])
     end
 end
