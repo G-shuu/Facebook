@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'notifications/index'
+  root 'top#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-
-  root 'top#index'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

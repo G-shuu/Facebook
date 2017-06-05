@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     topics_path
   end
 
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
   protect_from_forgery with: :exception
   add_flash_types :success, :info, :warning, :danger
 

@@ -50,15 +50,6 @@
   <div id="gnavi" class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <%= link_to notifications_index_path, class: "nabvar-brand" do %>
-          <% if @notifications_count == 0 %>
-            <i class="fa fa-bell fa-1x"><span id="unread_count"><% @notifications_count %></i></span>
-          <% else %>
-            <i class="fa fa-bell fa-1x" style="color: yellow;"><span id="read_count"><% @notifications_count %></i></span>
-          <% end %>
-        <% end %>
-      <% end %>
-      <% if user_signed_in? %>
         <li><%= link_to current_user.name, edit_user_registration_path %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
